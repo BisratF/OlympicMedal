@@ -1,4 +1,4 @@
-package com.example.justuser.olympicmedal;
+package com.example.justuser.olympicmedal.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,11 +9,14 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.justuser.olympicmedal.R;
+import com.example.justuser.olympicmedal.presenter.MainContract;
+
+public class MainActivity extends AppCompatActivity implements MainContract.MVPView {
 
     TableLayout medalTable;
     TableRow newRow;
-    TextView mCountry,mGold,mSilver,mBronze,mTotal;
+    TextView mCountry, mGold, mSilver, mBronze, mTotal;
     Button addButton;
 
     @Override
@@ -27,14 +30,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   private void addNewRow () {
+    private void addNewRow() {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 TableRow.LayoutParams lp = new TableRow.LayoutParams();
                 lp.span = 5;
-                lp.weight =1;
+                lp.weight = 1;
 
                 newRow = new TableRow(getApplicationContext());
 
@@ -86,10 +88,19 @@ public class MainActivity extends AppCompatActivity {
                 newRow.addView(mTotal);
 
                 medalTable.addView(newRow);
+
             }
         });
     }
 
 
+    @Override
+    public void setMedalTable() {
 
+    }
+
+    @Override
+    public void setError() {
+
+    }
 }

@@ -1,6 +1,5 @@
-
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="10dp">
@@ -9,38 +8,52 @@
         android:id="@+id/add_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Row"
-       />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="264dp"
+        android:layout_marginTop="126dp"
+        android:text="Add Row" />
 
     <TableLayout
+        android:id="@+id/medal_table"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:id="@+id/medal_table">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="196dp">
 
         <TableRow
+            android:id="@+id/table_title"
+            android:layout_alignStart="@+id/medal_table"
             android:background="#607D8B"
             android:padding="5dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Country" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Gold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Silver" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Bronze" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -53,13 +66,13 @@
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="118dp"
+        android:layout_height="110dp"
         android:layout_below="@+id/medal_table"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="-3dp"
-        android:layout_marginBottom="296dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="136dp"
         android:background="#807979"
         android:scrollbarAlwaysDrawVerticalTrack="true">
 
@@ -81,7 +94,55 @@
         </TableLayout>
     </android.support.v4.widget.NestedScrollView>
 
+    <Spinner
+        android:id="@+id/country_spinner"
+        android:layout_width="251dp"
+        android:layout_height="43dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="17dp" />
 
+    <Spinner
+
+        android:id="@+id/medal_spinner"
+        android:layout_width="256dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="75dp" />
+
+    <EditText
+        android:id="@+id/medal_amount"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/add_btn"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="-1dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Amount" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="31dp"
+        android:text="Country" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="86dp"
+        android:text="Medal" />
 
 
 </RelativeLayout>
